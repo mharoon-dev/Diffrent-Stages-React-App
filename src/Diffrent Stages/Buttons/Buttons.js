@@ -1,10 +1,11 @@
-export default function Buttons() {
-  const buttons = ["Perivous", "Next"];
+export default function Buttons( { number, setNumber , stages } ) {
+  console.log(number)
+  
   return (
     <div className="d-flex justify-content-around align-items-center w-75">
-      {buttons.map((element) => (
         <h3
-          key={element}
+          onClick={number > 1 ? () => setNumber(number - 1) : null}
+          key="pervious"
           style={{
             marginBottom: "0",
             color: "black",
@@ -14,16 +15,38 @@ export default function Buttons() {
             style={{
               backgroundColor: "#6f45f1",
               borderRadius: "15px",
-              fonstSize: "10px",
+              fontSize: "20px",
               color: "white",
               border: "none",
               padding: "12px",
             }}
           >
-            {element}
+            pervious
           </button>
         </h3>
-      ))}
+
+        {/* next */}
+        <h3
+        onClick={stages > number ? () => setNumber(number + 1) : null}
+          key="Next"
+          style={{
+            marginBottom: "0",
+            color: "black",
+          }}
+        >
+          <button
+            style={{
+              backgroundColor: "#6f45f1",
+              borderRadius: "15px",
+              fontSize: "20px",
+              color: "white",
+              border: "none",
+              padding: "12px",
+            }}
+          >
+            Next
+          </button>
+        </h3>
     </div>
   );
 }

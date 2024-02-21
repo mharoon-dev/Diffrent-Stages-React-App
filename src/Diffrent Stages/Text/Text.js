@@ -1,4 +1,4 @@
-export default function Text() {
+export default function Text({text}) {
     const texts = [
         "Step 1: Learn JavaScript",
         "Step 2: Learn React",
@@ -6,21 +6,15 @@ export default function Text() {
     ]
     return (
         <div className="col-12 w-75 d-flex flex-column justify-content-around align-items-center">
-            {/* {texts.map((element) => (
         <h3
-          key={element} 
+          key={text} 
           style={{
             marginBottom: "0",
             color: "black",
           }}
         >
-          {element}
+          {text}
         </h3>
-      ))} */}
-      {/* dammy text */}
-      <h3>
-        Step 1: Learn JavaScript
-      </h3>
 
         </div>
     )

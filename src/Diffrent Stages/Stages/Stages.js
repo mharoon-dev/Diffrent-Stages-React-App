@@ -1,12 +1,12 @@
-export default function Stages() {
+export default function Stages({ number }) {
   const numbers = [1, 2, 3];
   return (
-    <div className="col-12 d-flex justify-content-around align-items-center " 
-    >
-{numbers.map((element) => (
+    <div className="col-12 d-flex justify-content-around align-items-center ">
+      {numbers.map((num) => (
         <p
-          key={element}  // Add a key to each element when rendering in a loop
+          key={num}
           style={{
+            border: num == number ? "3px solid black" : "none",
             marginBottom: "0",
             color: "white",
             backgroundColor: "#6f45f1",
@@ -18,7 +18,7 @@ export default function Stages() {
             justifyContent: "center",
           }}
         >
-          {element}
+          {num}
         </p>
       ))}
     </div>
